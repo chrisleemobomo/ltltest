@@ -39,6 +39,15 @@ class NavigationSteps(object):
         """
         world.driver.find_element_by_link_text(str(link_text)).click()
 
+    @step(u'I click the xpath "([^"]*)" link')
+    def when_i_click_the_link_text_link(step, xpath_link_text):
+        """ clicks on line given link:
+
+            >>> And I click the xpath "<xpath>" link
+
+        """
+        world.driver.find_element_by_xpath(str(xpath_link_text)).click()
+
     @step(u'I wait "([^"]*)" seconds')
     def and_i_wait_seconds(step, seconds):
         """ Waits for the given amount of seconds:
@@ -97,7 +106,7 @@ class BasicObjectStepts(object):
     @step(u'I click the "([^"]*)" button')
     @step(u'I click the button with text "([^"]*)"')
     def i_click_the_button_with_text(step, button_text):
-        """ Finds and clicks the button with the given text 
+        """ Finds and clicks the button with the given text
 
             >>> And I click the "clickableObject" button
             or
@@ -163,7 +172,7 @@ class BasicObjectStepts(object):
 
     @step(u'{0}"([^"]*)" contains {0}"([^"]*)"'.format(consts.SELECTOR_TYPES))
     def object_contains_object(step, type_id_f, id_f, type_id_c, id_c):
-        """ finds the father element and then checks the element contains a 
+        """ finds the father element and then checks the element contains a
             second (child) element:
 
             >>> cn"forgot-password" contains lt"Forgot Password?"
@@ -176,7 +185,7 @@ class BasicObjectStepts(object):
 
     @step(u'I click the {0}"([^"]*)" object inside the {0}"([^"]*)" object'.format(consts.SELECTOR_TYPES))
     def object_contains_object(step, type_id_c, id_c, type_id_f, id_f):
-        """ finds the father element and then checks the element contains a 
+        """ finds the father element and then checks the element contains a
             second (child) element:
 
             >>> cn"forgot-password" contains lt"Forgot Password?"
