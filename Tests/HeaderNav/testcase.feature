@@ -14,5 +14,5 @@ Scenario: Login
     Then I should be taken to "/shop/"
     And I click id"leagues"
     Then I should be taken to "/leagues/"
-    And I click the "Blog" link
+    And I click the "Blog" button
     Then I should be taken to "/roundup"
