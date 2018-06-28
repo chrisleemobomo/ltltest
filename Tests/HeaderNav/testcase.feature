@@ -14,5 +14,5 @@ Scenario: Login
     Then I should be taken to "/shop/"
     And I click id"leagues"
     Then I should be taken to "/leagues/"
-    And I click the "Blog" button
+    And I click xpath"//*[@id='block-system-main-menu']/ul/li[6]/a"
     Then I should be taken to "/roundup"
